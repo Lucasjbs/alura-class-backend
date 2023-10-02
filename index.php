@@ -32,3 +32,5 @@ echo ("You can use 'git remote rename <old_repository_name> <new_repository_name
 echo ("Use 'git push <remote_repository_name> <branch_name_usually_master>', to push the committed changes into the remote repository.") . PHP_EOL;
 echo ("Use 'git pull <remote_repository_name> <branch_name_usually_master>', to pull the remote repository files into your own.") . PHP_EOL;
 
+//Remote Repositories
+echo ("Hint: VSCode can manage most of these commands automatically in the Source Control sidebar.") . PHP_EOL;

@@ -1,0 +1,50 @@
+A Git repository is a data structure that stores a collection of files, along with metadata about those files and the history of changes made to them. Usually those files are stored inside a dedicated folder.
+To start using git, download it on its website, then run the command 'git init' on the folder you wish git to track and monitor its files.
+Don't forget to configure your username and email with the commands: 'git config --local user.name <yourname>' and 'git config --local user.email <youremail>'. NOTE: if you want to add these configurations to all projects on your machine, use '--global' instead.
+
+You can use the command 'git status' to observe the folder current status.
+Use the command 'git add .' to stage all changes.
+You can use the command 'git rm --cached <file_name>' to unstage the file changes.
+Use the command "git commit -m "commit_msg"" to commit all staged changes.
+
+When executing the git status command, we receive some information that may not be so clear, especially when we come across terms like HEAD, working tree, index, etc. To clarify:
+- HEAD: Current state of our code, that is, where Git placed them.
+- Working tree: Location where files are actually being stored and edited.
+- Index: Location where Git stores what will be committed, that is, the location between the working tree and the Git repository itself.
+
+You can use the command 'git log' to list the commits made in your repository by the most recent order.
+Variations of this command, such as 'git log --oneline' can be found in 'https://devhints.io/git-log'.
+To ignore certain files and folders, create a '.gitignore' file, and put the name of the files you wish to ignore.
+You can use the command 'git remote' to list all the remote repositories that your local repository knows.
+
+Remote Repositories: Git repositories can be hosted remotely on services like GitHub, GitLab, or Bitbucket. Remote repositories enable collaboration among multiple developers by allowing them to clone, push, and pull changes to and from a central repository.
+Using 'git init --bare' in a empty folder, you can create a remote repository, even in your own machine.
+Using 'git remote add <repository_name> <repository_location>', you can add this to your list of remote repositories. The location of this repository can be either a local folder, or a GitHub/GitLab link.
+You can use 'git remote rename <old_repository_name> <new_repository_name>', to rename the know remote repositories.
+
+Use 'git push <remote_repository_name> <branch_name_usually_master>', to push the committed changes into the remote repository.
+Use 'git pull <remote_repository_name> <branch_name_usually_master>', to pull the remote repository files into your own.
+
+Hint: VSCode can manage most of these commands automatically in the Source Control sidebar.
+
+Command List:
+- git config --local user.name <yourname>
+- git config --local user.email <youremail>
+- git config --global user.name <yourname>
+- git config --global user.email <youremail>
+- git init
+- git status
+- git add .
+- git commit -m "commit_msg"
+- git remote
+- git remote add <repository_name> <repository_location>
+- git push <remote_repository_name> <branch_name_usually_master>
+- git pull <remote_repository_name> <branch_name_usually_master>
+
+
+- git rm --cached <file_name>
+- git log
+- git log --oneline
+- git init --bare
+- git remote rename <old_repository_name> <new_repository_name>
+- git log
