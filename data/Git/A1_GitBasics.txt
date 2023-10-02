@@ -26,6 +26,8 @@ Use 'git push <remote_repository_name> <branch_name_usually_master>', to push th
 Use 'git pull <remote_repository_name> <branch_name_usually_master>', to pull the remote repository files into your own.
 
 Hint: VSCode can manage most of these commands automatically in the Source Control sidebar.
+You can use the command 'git branch' to view the branches in your project.
+
 
 Command List:
 - git config --local user.name <yourname>
@@ -40,6 +42,7 @@ Command List:
 - git remote add <repository_name> <repository_location>
 - git push <remote_repository_name> <branch_name_usually_master>
 - git pull <remote_repository_name> <branch_name_usually_master>
+- git branch
 
 
 - git rm --cached <file_name>

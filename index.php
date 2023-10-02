@@ -32,5 +32,11 @@ echo ("You can use 'git remote rename <old_repository_name> <new_repository_name
 echo ("Use 'git push <remote_repository_name> <branch_name_usually_master>', to push the committed changes into the remote repository.") . PHP_EOL;
 echo ("Use 'git pull <remote_repository_name> <branch_name_usually_master>', to pull the remote repository files into your own.") . PHP_EOL;
 
-//Remote Repositories
+//Teamwork
 echo ("Hint: VSCode can manage most of these commands automatically in the Source Control sidebar.") . PHP_EOL;
+
+echo ("You can use the command 'git branch' to view the branches in your project.") . PHP_EOL;
+echo ("Use the command 'git checkout -b <branch_name>' to create a new branch and go to it.") . PHP_EOL;
+echo ("You can use the site 'https://git-school.github.io/visualizing-git/' to help visualize how git branches work.") . PHP_EOL;
+echo ("When creating and modifying a new branch, the changes you made on that branch will be separeted from the master branch until these branches are merged.") . PHP_EOL;
+echo ("Use the command 'git checkout -b <branch_name>' to create a new branch and go to it.") . PHP_EOL;
