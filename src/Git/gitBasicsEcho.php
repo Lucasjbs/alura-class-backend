@@ -1,5 +1,4 @@
 <?php
-
 echo ("A Git repository is a data structure that stores a collection of files, usually those files are stored inside a folder.") . PHP_EOL;
 echo ("To start using git, download it on its website, then run the command 'git init' on the folder you wish git to track and monitor its files.") . PHP_EOL;
 echo ("Don't forget to configure your username and email with the commands: 
@@ -76,21 +75,24 @@ echo ("On GitHub, this will generate a new Release of your project on the websit
 echo ('In Open Source projects, you can receive improvement suggestions from other developers. You can receive this and other types of feedbacks through the Issues tab on GitHub.') . PHP_EOL;
 echo ('One way to solve problems from other projects is to fork the project to yourself, and make the changes there.') . PHP_EOL;
 echo ("If you're trying to use 2 or more different Git users on the same OS on Windows, you might have to delete the previous credentials so the GitHUb window can appear again to type your email and password.") . PHP_EOL;
-echo ("With Issues and Pull Requests, you can merge new modifications to your file.") . PHP_EOL;
+echo ("You don't need Issues to create a Pull Requests, but you can use it to solve the Issues in your project.") . PHP_EOL;
+echo ("For each new branch, you can create a Pull Request to Merge this branch with the Master. You can even do self assignments with it.") . PHP_EOL;
+
+//Advanced Control
+echo ("You can use 'git cherry-pick <commit_harsh>' to merge an especific commit into your current branch.") . PHP_EOL;
+echo ("The command 'git bisect' can be used to navigate through previous commits to find a bug. This can be a lot of manual work though, usually it's better to just use an tool or extension like GitLens.") . PHP_EOL;
+echo ("You can use 'git blame <file_name>' to see who was the last person that modified the lines of the file. Once again, GitLens can do this automatically.") . PHP_EOL;
+
+//Strategies and Tools
+echo ("Once the Master branch is stable, is a common convention to move the project to the Staging Branch for QA tests, and then to Production branch to deploy it.") . PHP_EOL;
+echo ("Other tools showcased by the course were 'Git Cola', 'GitHub Desktop', and 'GitKraken'.") . PHP_EOL;
+echo ("For me personally, the VSCode Source Control together with GitLens Extension works just fine.") . PHP_EOL;
+
+//Events
+echo ("Inside '.git/hooks' there are files with the '.sample' extensions. The 'pre-commit.sample' file can be used to automatically run a shell script before every commit.") . PHP_EOL;
+echo ("This can be used to run test scprits to check if the code follows basic standards before submitting the changes.") . PHP_EOL;
+echo ("An good example of this is mova-script from work") . PHP_EOL;
+echo ("You might need to run 'chmod u+x pre-commit' in Linux OS to be able to run the files.") . PHP_EOL;
+echo ("In class, the instructor created a file 'post-receive' to run as a hook right after the developer push his changes. However, this was done inside the hooks of the local BARE server, not on GitHub or GitLab server.") . PHP_EOL;
+echo ("It didn't go too deep on it, but maybe, this automatic deploy can be used to run unit tests after pushing the changes.") . PHP_EOL;
 echo ("") . PHP_EOL;
-echo ("") . PHP_EOL;
-echo ("") . PHP_EOL;
-echo ("") . PHP_EOL;
-
-
-
-
-
-
-
-
-
-
-
-
-
