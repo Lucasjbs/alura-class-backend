@@ -95,3 +95,4 @@ Command List:
 - git stash pop
 - git checkout <old_commit_hash>
 - git diff
+- teste
