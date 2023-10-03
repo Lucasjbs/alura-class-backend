@@ -32,11 +32,40 @@ echo ("You can use 'git remote rename <old_repository_name> <new_repository_name
 echo ("Use 'git push <remote_repository_name> <branch_name_usually_master>', to push the committed changes into the remote repository.") . PHP_EOL;
 echo ("Use 'git pull <remote_repository_name> <branch_name_usually_master>', to pull the remote repository files into your own.") . PHP_EOL;
 
-//Teamwork
+//Branches
 echo ("Hint: VSCode can manage most of these commands automatically in the Source Control sidebar.") . PHP_EOL;
 
 echo ("You can use the command 'git branch' to view the branches in your project.") . PHP_EOL;
 echo ("Use the command 'git checkout -b <branch_name>' to create a new branch and go to it.") . PHP_EOL;
 echo ("You can use the site 'https://git-school.github.io/visualizing-git/' to help visualize how git branches work.") . PHP_EOL;
 echo ("When creating and modifying a new branch, the changes you made on that branch will be separeted from the master branch until these branches are merged.") . PHP_EOL;
-echo ("Use the command 'git checkout -b <branch_name>' to create a new branch and go to it.") . PHP_EOL;
+
+//Merge
+echo ("To merge a branch with the Default branch, first go to the Default branch.") . PHP_EOL;
+echo ("Use the command 'git checkout <branch_name>' to move to an existing branch.") . PHP_EOL;
+echo ("On the Default branch, use the command 'git merge <name_of_the_other_branch>'.") . PHP_EOL;
+echo ("If the Vim prompt opens up, you can change the commit message by altering the text in the first line.") . PHP_EOL;
+echo ("Use ':X' to save and exit. Vim can be painfull to use so I don't recommend do anything else.") . PHP_EOL;
+
+echo ("It is possible to use 'git rebase  <name_of_the_other_branch>' to achieve the same result without a new commit. However, it removes the history of those changes. If you're dealing with a large team or group, you may have to avoid using that.") . PHP_EOL;
+echo ("If you try to merge and you have conflicts, you'll have to fix those conflicts before continue.") . PHP_EOL;
+
+//Navigation
+echo ("If you want to discard modifications and you haven't commited them yet, use the command 'git checkout -- <filename>'.") . PHP_EOL;
+echo ("If you have added but not committed, you can use 'git reset HEAD <filename>' to unstage and undo.") . PHP_EOL;
+echo ("VSCode does that automatically.") . PHP_EOL;
+echo ("If you have committed the changes already, you can run 'git revert <commit_hash_code>' to undo the commit.") . PHP_EOL;
+
+echo ("If you need to keep the changes saved temporarily, but you can't commit them yet, use 'git stash'.") . PHP_EOL;
+echo ("You can use 'git stash list' to list and see the saved changes.") . PHP_EOL;
+echo ("You can run 'git stash apply <position_of_the_stash>' to get the saved changes back.") . PHP_EOL;
+echo ("Then, you'll have to use 'git stash drop' to remove the stash.") . PHP_EOL;
+echo ("Or, you can just use 'git stash pop' to do both.") . PHP_EOL;
+echo ("To navigate throught the project versions, you can use git checkout with its previous versions to return to that point of time: 'git checkout <old_commit_hash>'") . PHP_EOL;
+
+echo ("You can use the command 'git diff' to check the file changes.") . PHP_EOL;
+
+//Tags and Releases
+echo ('To create a new tag for a stable version of your project, you can use <git tag -a v0.1.0 -m "tag_description">.') . PHP_EOL;
+echo ('Then push these changes to add the tag to your project: "git push <remote_repository> v0.1.0".') . PHP_EOL;
+echo ("On GitHub, this will generate a new Release of your project on the website for anyone to download and use.") . PHP_EOL;

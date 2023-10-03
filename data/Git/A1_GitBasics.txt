@@ -27,6 +27,35 @@ Use 'git pull <remote_repository_name> <branch_name_usually_master>', to pull th
 
 Hint: VSCode can manage most of these commands automatically in the Source Control sidebar.
 You can use the command 'git branch' to view the branches in your project.
+Use the command 'git checkout -b <branch_name>' to create a new branch and go to it.
+You can use the site 'https://git-school.github.io/visualizing-git/' to help visualize how git branches work.
+When creating and modifying a new branch, the changes you made on that branch will be separeted from the master branch until these branches are merged.
+
+To merge a branch with the Default branch, first go to the Default branch.
+Use the command 'git checkout <branch_name>' to move to an existing branch.
+On the Default branch, use the command 'git merge <name_of_the_other_branch>'.
+If the Vim prompt opens up, you can change the commit message by altering the text in the first line.
+Use ':X' to save and exit. Vim can be painfull to use so I don't recommend do anything else.
+It is possible to use 'git rebase <name_of_the_other_branch>' to achieve the same result without a new commit. However, it removes the history of those changes. If you're dealing with a large team or group, you may have to avoid using that.
+If you try to merge and you have conflicts, you'll have to fix those conflicts before continue.
+
+If you want to discard modifications and you haven't commited them yet, use the command 'git checkout -- <filename>'. 
+If you have added but not committed, you can use 'git reset HEAD <filename>' to unstage and undo. 
+VSCode does that automatically.
+If you have committed the changes already, you can run 'git revert <commit_hash_code>' to undo the commit.
+
+If you need to keep the changes saved temporarily, but you can't commit them yet, use 'git stash'.
+You can use 'git stash list' to list and see the saved changes.
+You can run 'git stash apply <position_of_the_stash>' to get the saved changes back.
+Then, you'll have to use 'git stash drop' to remove the stash.
+Or, you can just use 'git stash pop' to do both.
+To navigate throught the project versions, you can use git checkout with its previous versions to return to that point of time: 'git checkout <old_commit_hash>'
+You can use the command 'git diff' to check the file changes.
+
+To create a new tag for a stable version of your project, you can use <git tag -a v0.1.0 -m "tag_description">.
+Then push these changes to add the tag to your project: "git push <remote_repository> v0.1.0".
+On GitHub, this will generate a new Release of your project on the website for anyone to download and use.
+
 
 
 Command List:
@@ -43,11 +72,26 @@ Command List:
 - git push <remote_repository_name> <branch_name_usually_master>
 - git pull <remote_repository_name> <branch_name_usually_master>
 - git branch
-
+- git checkout -b <branch_name>
+- git checkout <branch_name>
+- git merge <name_of_the_other_branch>
+- git stash
+- git stash list
+- git tag -a v0.1.0 -m "tag_description"
+- git push <remote_repository> v0.1.0
 
 - git rm --cached <file_name>
 - git log
 - git log --oneline
 - git init --bare
 - git remote rename <old_repository_name> <new_repository_name>
-- git log
+- git log --graph
+- git rebase <name_of_the_other_branch>
+- git checkout -- <filename>
+- git reset HEAD <filename>
+- git revert <commit_hash_code>
+- git stash apply <position_of_the_stash>
+- git stash drop
+- git stash pop
+- git checkout <old_commit_hash>
+- git diff
