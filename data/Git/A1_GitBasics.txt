@@ -56,8 +56,6 @@ To create a new tag for a stable version of your project, you can use <git tag -
 Then push these changes to add the tag to your project: "git push <remote_repository> v0.1.0".
 On GitHub, this will generate a new Release of your project on the website for anyone to download and use.
 
-
-
 Command List:
 - git config --local user.name <yourname>
 - git config --local user.email <youremail>
