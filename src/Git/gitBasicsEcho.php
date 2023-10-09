@@ -95,4 +95,6 @@ echo ("An good example of this is mova-script from work") . PHP_EOL;
 echo ("You might need to run 'chmod u+x pre-commit' in Linux OS to be able to run the files.") . PHP_EOL;
 echo ("In class, the instructor created a file 'post-receive' to run as a hook right after the developer push his changes. However, this was done inside the hooks of the local BARE server, not on GitHub or GitLab server.") . PHP_EOL;
 echo ("It didn't go too deep on it, but maybe, this automatic deploy can be used to run unit tests after pushing the changes.") . PHP_EOL;
-echo ("") . PHP_EOL;
+
+//Extras
+echo ("Another website to learn and train Git Branching: https://learngitbranching.js.org/") . PHP_EOL;
