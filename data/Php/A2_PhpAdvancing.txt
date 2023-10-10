@@ -1,0 +1,37 @@
+//Working with Arrays and Associative Arrays
+Berfore version 5, an array in phpwas created as: 'array(1, 2, 3...)'. Now we can do it as '[1, 2, 3]'.
+The 'for(){}' loop can be used to access an array index '$array[i]'.
+An associative array can be created by defining the key before setting up a value: '$array = ['indexKey' => 'value', ...]'
+To access the value of a group of associative arrays, we can use foreach even the the keys aren't in numerical order, which wouldn't be possible for the conventional for loop.
+Foreach can access the Keys of the array values dynamically as well
+If you add a new value to an existing array, PHP will always set up the first available integer value, starting from zero
+Php Arrays only use two types for Keys, Integers and Strings. If, for example, boolean or float were to be used as an array Key, it'll be converted to an Integer and might replace another existing index if necessary.
+
+In Php, arrays are stored internally as HashTables.
+
+//Functions, Imports and Errors
+The difference between functions and subroutines are subtle. Subroutines excecute what they need and don't return anything (void), but functions do return value.
+We can import another file with just its location. 
+In this case, Require will be used when you expect Php to return an error if he doesn't find the file.
+Include will be used when you expect Php to run the code even if he doesn't find the file. It'll be returned an warning in that case.
+The required_once can also be used to avoid repetition.
+
+Php errors are, most of the time, divided in Notice, Warning and Error. Notice and Warning won't stop the code execution, but errors will.
+
+//Lists and References
+If the called function is using the Reference of the array with '&', instead of just a copy of the array, the modifications made will persist on the original array.
+However, this is not recommended, as making these modifications directly on the original array can be overwhelming in large scale projects. There are better ways to do this in Object Oriented Programming.
+
+Some libraries in Php, for example mb_strtoupper, have to be enabled in php.ini. This process is different for Windows and Linux.
+In Windows, just go to the php.ini file and remove the comment (;) from the library name (;extension=mbstring).
+On the first time, it's also necessary to remove the comment for the directory in which the extensions reside (;extension_dir = "ext").
+
+Lists are an attribution that can be made from array to array. Currently, its not necessary to write list() anymore, it can be done with just the curly brackets.
+Using it with Associative Arrays, we can take each value of $investidor, and assign it to other variables
+To remove a value from an array, simply use unset($array[value_position])
+
+//PHP and Web
+To up the projects to a localhost server, we can use the PHP built-in web server made to run tests in our project.
+To run the server, type 'php -S localhost:8000' in the folder you wish to run your files. Then go to http://localhost:8000/
+If you have an index.php, it will run it first, if not it'll say no file was found and you'll have to navigate the search bar to run your other files.
+
