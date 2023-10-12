@@ -1,0 +1,35 @@
+//Procedural Programming Problems
+One of the biggest problems with procedural programming is losing track of coding repetition. When the project is relatively small, this isn't so much of a problem, but for large scale projects this can become a scourge.
+Code repetiton cause problems when the code needs to be modified. To avoid that and other problems, a paradigm that is better suited for large scale projects is called Object Orientation.
+Other problems with procedural programming, is having data variables and its behaviors in different places. 
+
+//Introducing Object Orientation Programming
+Creating a Class
+When we create a new Class, we're also creating a new Type of its own. For example, when creating the class 'Account.php', the type Account will exist just like Integer and Strings.
+When a variable instances a class, it becomes an Object/Instance of that class.
+The data values of an object are called Attributes.
+In short, a Class is a model for an object that will be created/instanced. It does nothing on its own, but it shapes how the Object must behave.
+When changing and defining the attribute values, we do it on the instanced object, not on the class. 
+We define the value on the instanced objects not in the class.
+The variable for the object only stores the reference for that object. If you copy the object, the changes on the copy affects the original, since its the reference that's being copied
+
+//Class behaviors
+Difference of Methods and Functions: Basically, Methods are Functions of a Class. The reason they're treated differently is because they must be created with the single purpose of defining the behavior of that class.
+When creating a Method, we must inform if the method is public, protected or private. It uses public as default, but its a good pratice to make this explicit. 
+When using '$this->'(for instance) or 'self::'(for Class) we're referencing the values of our own object/instance.
+If we set up a value when defining the attribute of a class, this value will be its initial value. It can be changed afterwards.
+
+//Protecting our data
+We can protect the data values of our Class by setting up its attributes as private, instead of public. Its a good pratice to leave these attributes private, save rare exceptions.
+With the Class attributes private, we have to get the object values through public Methods. A common type of Methods for this are called Getters and Setters.
+Getters are used to get the value, and usually you should have the option to get every attribute of the Class. Setters on the other hand, are used more sparsely, usually they have a set of rules to validate if the value can be set to the Object.
+
+//About Methods
+Its a good pratice to create Constructor Methods for your class, save rare exceptions. These methods will run when an Instance is created, and they're meant to build the basic Attributes of your Object.
+Private Methods can be used to split sections of your code so it can be easier to read. Its also very usefull for validations inside and outside the Constructor Method.
+Static Methods are methods sof the Class, and not of the Instance. Therefore, its data will be saved to every instance available.
+Static Methods can cause problems to tests.
+The Destructor Method runs when the Instance is removed.
+When a instance lost all its references and can no longer be accessed, the Garbage Collector will remove the Instance.
+Unset works for Instances as well as arrays. What happens when reference is lost (garbage collector)
+
