@@ -1,0 +1,17 @@
+//Inheritance
+Inheritance in OOP is when a Class inherit characteristics of another Class. In this case, we'll be able to access the arguments and methods of the father Class through its sons, unless they're private.
+To prevent access to anyone except its heirs, we can use the 'protected' modifier. 
+We can call the parent constructor to initialize the parent while initializing its heirs.
+It is a good practice to always call the parent constructor, as it makes sense for the Class to inherit the parent in the first place. Still, the code will work normally if you don't.
+
+//Namespaces and Autoload
+To sort our classes in our projects, we'll need to use Namespaces and Autoloads.
+Namespaces are used to identify the class path. Its structure is build with the project's Root Namespace + Class Path.
+To use namespaces to locate the Classes automatically, we'll need the Autoloads.
+With the PHP's function 'spl_autoload_register()', we can use the namespaces to automatically call the require to the classes on demand, without worrying about which class comes first.
+The Autoload structure are based on the PSRs. The PSR-4 is particularly important for Autoloads.
+
+//Abstract Methods
+
+
+
