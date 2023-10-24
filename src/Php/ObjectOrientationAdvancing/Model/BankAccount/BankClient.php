@@ -22,7 +22,19 @@ class BankClient extends Account
             echo ("Valor Invalido!"  . PHP_EOL);
             return;
         }
+        $value = $this->depositTax($value);
         $this->balance = $value;
+    }
+    
+    public function passiveIncome(): float
+    {
+        return $this->balance * 0.15;
+    }
+
+    protected function depositTax(float $value) : float 
+    {
+        $value = $value - ($value*0.05);
+        return $value;
     }
 
     public function getOccupation() : string 

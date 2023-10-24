@@ -4,7 +4,8 @@ namespace Class\Bank\Model\BankAccount;
 
 use Class\Bank\Model\Person;
 
-class Account
+//To write an abstract method, your class needs to be abstract as well.
+abstract class Account
 {
     public const CURRENT_ACCOUNT = 'corrente';
     public const SAVINGS_ACCOUNT = 'poupanca';
@@ -32,9 +33,11 @@ class Account
     public function depositMoneyToAccount(float $value, Account $account) : void 
     {
         if ($value > $this->balance) {
-            echo ("Saldo indisponivel!"  . PHP_EOL);
+            echo ("Saldo indisponivel!" . PHP_EOL);
             return;
         }
+        //Abstract methods can be called from an abstract class, since they'll exist if the class extends this one.
+        $value = $this->depositTax($value);
         $this->manageBalance($value, $account);
         echo ("Depositado $value para conta. Seu saldo atual eh $this->balance!"  . PHP_EOL);
     }
@@ -71,4 +74,11 @@ class Account
         echo ("Tipo de conta invalido!"  . PHP_EOL);
         exit();
     }
+    
+    //Every class that extends Account need to implement this method:
+    abstract protected function depositTax(float $value) : float;
+
+    abstract public function depositMoneyToBalance(float $value) : void;
+
+    abstract public function passiveIncome() : float;
 }
