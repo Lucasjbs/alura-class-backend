@@ -1,0 +1,40 @@
+//Inheritance
+Inheritance in OOP is when a Class inherit characteristics of another Class. In this case, we'll be able to access the arguments and methods of the father Class through its sons, unless they're private.
+To prevent access to anyone except its heirs, we can use the 'protected' modifier. 
+We can call the parent constructor to initialize the parent while initializing its heirs.
+It is a good practice to always call the parent constructor, as it makes sense for the Class to inherit the parent in the first place. Still, the code will work normally if you don't.
+
+//Namespaces and Autoload
+To sort our classes in our projects, we'll need to use Namespaces and Autoloads.
+Namespaces are used to identify the class path. Its structure is build with the project's Root Namespace + Class Path.
+To use namespaces to locate the Classes automatically, we'll need the Autoloads.
+With the PHP's function 'spl_autoload_register()', we can use the namespaces to automatically call the require to the classes on demand, without worrying about which class comes first.
+The Autoload structure are based on the PSRs. The PSR-4 is particularly important for Autoloads.
+
+//Abstract Methods
+A child class can overwrite a parent's method by creating a new one with the same name and parameters.
+An abstract method forces every child to implement that specific method.
+To write an abstract method, your class needs to be abstract as well. An abstract method is an incomplete method, therefore, your class is incomplete as well.
+An abstract class cannot be instanced. These classes are models for other classes.
+Abstract methods can be called from an abstract class, since they'll exist if the class extends the abstract one.
+We cannot create abstract private methods because then, the children won't be able to access them.
+
+//Polymorphism
+Object Orientation has 4 pillars: Inheritance, Abstraction, Encapsulation and Polymorphism.
+Inheritance and abstraction has to do with Class extensions we've seen before. Encapsulation is a concept where each class has to focus on its own thing.
+Polymorphism is a concept where a Class can have multiple forms (hence polymorph). In this project, Account can be a Client Bank Account, an Investor Account or a Student Account.
+The idea is that the same reference (Account) can behave differently. This concept is the reason why we are expecting a Account in PassiveIncomeManager, since it can be any of its children.
+
+//Interface
+In a situation were we need some classes to implement a token system, but these classes can be a Bank Account or something else entirely, so using abstract methods won't work properly.
+To force some classes to inherit only specific characteristics, we can force them to Implement an Interface.
+Interfaces forces a class to implement a set of methods, like an abstract method from abstract classes.
+Unlike extensions, there's no limit to how many Interfaces a Class can implement.
+Interface methods must be public.
+
+//Magic Methods
+__toString(): every time we call the Class the method will run, and return the desired string.
+The Final modifier prevents the Class from being extended, and prevents a method from being be overwritten.
+- Important mentions:
+__invoke(): allows you to can call the object like a function and run the magic method.
+Traits: mechanism that allows you to reuse methods, a fast solution to copy paste codes that don't work well with extensions. They don't work well with phpUnit.
