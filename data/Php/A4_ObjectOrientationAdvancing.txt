@@ -38,3 +38,8 @@ The Final modifier prevents the Class from being extended, and prevents a method
 - Important mentions:
 __invoke(): allows you to can call the object like a function and run the magic method.
 Traits: mechanism that allows you to reuse methods, a fast solution to copy paste codes that don't work well with extensions. They don't work well with phpUnit.
+
+
+
+//Extras:
+Multibyte String: if enabled, the 'mbstring' extension can be used to deal with special words such as 'ãêç'.

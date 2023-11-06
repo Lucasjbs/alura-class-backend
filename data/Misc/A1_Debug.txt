@@ -1,0 +1,47 @@
+// Installing and Setting Up:
+
+- Xdebug Installation On Windows:
+Link of the Installation Website: https://xdebug.org/wizard
+
+Once you're on the wizzard page, open your CMD and run 'php -i'. Copy the response and paste in the text area of the wizzard page.
+After that, download the provided php_xdebug file (ex: php_xdebug-3.2.2-8.2-vs16-x86_64.dll)
+
+Rename the file to 'php_xdebug.dll' and move it to the 'ext' folder inside the php installation folder.
+Open the 'php.ini' file (if its named 'php-developer.ini', rename it).
+Add the line: 'zend_extension = xdebug' at the end of the file (make sure extension_dir is enabled).
+
+Add the other configuration lines to enable debug:
+zend_extension = xdebug
+xdebug.mode = debug
+xdebug.start_with_request = yes
+
+Optional:
+xdebug.client_port = 9003
+xdebug.client_host = "127.0.0.1"
+
+Install the Extension 'PHP Debug' from 'Xdebug' in the VSCode.
+Enter the Run and Debugg Sidebar, and select Play to generate a '.Vscode' file with the configurations ready to start Debugging.
+
+//Debugging - Hints and Tips
+Conditional Debugs: Right CLick on the debug red icon, then select Edit Breakpoint.
+Write the condition in the expression box.
+Ex: Given that you want to investigate a User named 'Ezequiel', to stop the execution when his name is called in the Class Users, write "$this->name == 'Ezequiel'".
+
+Watches (Run and Debugg Sidebar)/: Used to have a dedicated look to a specific variable. Just paste the variable name in it (Ex: $variable).
+
+Debug Console (Next to the Terminal, on the bottom): Once you paused the execution, you can run additional codes that are not on the original source code.
+Ex: Given that the object Users was created, but getUserName() and getUserI() are not being called, you can stop the execution right when the object is created, and then run '$myUser->getUserName();' to get his name without edditing the original code.
+
+You can change the variable values on the spot when pausing the execution by right clicking the variable and selecting 'Set Value'. Your new value will persist throughout the code execution.
+
+
+//NOTE
+Changes on 'php.ini' may cause the message 'Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms...' to appear when Xdebug is not running.
+
+// Other topics (unused)
+Project Overview with Stack: Opens a browser window with project details
+Project Overview with Profiling: Creates a file with project details
+
+//Alura Public Article
+https://www.alura.com.br/artigos/configurando-xdebug-em-editores-jetbrains
+An article that, among other things, teaches how to install Xdebug on Linux.
