@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function (string $nomeClasse){
-    $filePath = str_replace('Class\\Bank', '.', $nomeClasse);
+    $filePath = str_replace('Class\\Bank', __DIR__, $nomeClasse);
     $filePath = str_replace('\\', DIRECTORY_SEPARATOR, $filePath);
     $filePath .= '.php';
     
