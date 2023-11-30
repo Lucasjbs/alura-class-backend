@@ -1,0 +1,57 @@
+//Recap
+On the low level, arrays in Php behave differently than other programming languages.
+To summarize, usually array data values are stored sequentially, in the RAM memory. 
+RAM SPACE: |------#-#***##-----##---| (Where * is the array)
+If more data is added to the array, and there isn't enough space available on the sequence, the data values position are changed. 
+RAM SPACE: |------#-#---##****-##---| (Where * is the array)
+
+Arrays in Php don't work that way. In reality, they work as another data structure called Hash Map, where Php uses a list with the value's position in RAM memory.
+
+Never loop through the entire array to check its length, use count() instead. Since Php array is a Hash Map, it already know its length by default, without need to loop.
+
+// Array sorting
+To sort array values by ascending and descending, we can use 'sort()' and 'rsort()' functions respectively.
+Sort fucntions does not return a copy of the sorted array, it will sort the original values values using its reference.
+To customize the array sorting, we can use 'usort()'. It expects an array and a function, which makes it a little tricky to use.
+To use usort(), we have to create a callback function that will recieve 2 arrays to compare, and return 1(any positive), 0 ,-1(any negative) to determine if the comparisson is higher, equal or lower. If -1, the first value is higher, if +1, the second value is higher.
+
+The Spaceship Operator is the equivalent of the basic comparisson used in the usort example.
+To easily sort associative arrays based on its values, we can use 'asort()' and 'arsort()' functions to sort by ascending and descending.
+To sort associative arrays based on its keys, we can use 'ksort()'.
+
+// Verifications
+It's not very common/good practice, but we can use 'gettype()' to identify the type of the variable, and also use 'is_array()' to confirm that the variable is an array.
+There is also the 'array_is_list()' function, to check whether the array is in list format (starts on zero, and all its keys are sequential).
+
+The function 'array_key_exists()' checks if the array key exists, and the function 'isset()' check if if the array key exists AND is not null (if its set).
+The function 'in_array()' checks if the array value exists, no matter which key. You can set the strict parameter as true, if you want the comparison to work as '===' operator.
+
+The function 'array_search()' can be used to get the key that contains a certain value.
+
+// Manipulations
+The function 'array_diff()' returns all the values of the first array that are NOT on subsequent arrays. This function filters based on value. To use other filters, use array_diff_keys to filter by keys instead of values, array_diff_assoc to filter the whole associative arrays, etc.
+
+The function 'array_keys()' returns only the keys of the selected array. The second parameter of this function can filter by value.
+Similar to array_keys, the function 'array_values()' will return only the values.
+The function 'array_combine()' will return the combination one array keys and other array's values.
+The function 'array_flip()' will switch values and keys.
+The function 'array_merge()' will append the second array at the end of the first one. If the keys have the same string, the second array will overwrite the first.
+Array Union Operator: Its possible to do: <$data = $array1 + $array2> in php. This will combine the arrays, but in a different way then its done in array_merge. For example, even if the keys are numerical the union won't overwrite or append like array_merge, it will ignore instead.
+
+We can use the Unpacking Operator to unpack an array, basically removing the brackets from it.
+The same operator can be used in function parameters as well, but in this case, its called Spread Operator, as the goal is different from when its using on an array.
+
+// More Array Manipulations
+The function 'array_push()' will insert a new value at the end of the array (had problems with associatives, just used $data[key] instead).
+Similar to array_push, 'array_unshift()' will add elements to the beginning of the array.
+The function 'array_shift()' will remove elements from the beginning of the original array, and returns it separately.
+The function 'array_pop()' will remove elements from the end of the original array, and returns it separately.
+
+Listing attributes: In php, its possible to use attribute array values to variables using a list to get those array values by position or name, if its an associative array.
+
+The function 'extract()' will create variable names for all associative keys with their respective values. It should not be used for untrusted data.
+The function 'compact()' will do the opposite of extract, and will create a new array, with the keys having the same values of the variables with the same names.
+
+array_filter, array_map, array_reduce wasn't covered in the course, but they are very common to use.
+
+Article covering this topic: https://www.alura.com.br/artigos/trabalhando-com-arrays-em-php
