@@ -13,7 +13,7 @@ Never loop through the entire array to check its length, use count() instead. Si
 To sort array values by ascending and descending, we can use 'sort()' and 'rsort()' functions respectively.
 Sort fucntions does not return a copy of the sorted array, it will sort the original values values using its reference.
 To customize the array sorting, we can use 'usort()'. It expects an array and a function, which makes it a little tricky to use.
-To use usort(), we have to create a callback function that will recieve 2 arrays to compare, and return 1, 0 ,-1 to determine if the comparisson is higher, equal or lower. If -1, the first value is higher, if +1, the second value is higher.
+To use usort(), we have to create a callback function that will recieve 2 arrays to compare, and return 1(any positive), 0 ,-1(any negative) to determine if the comparisson is higher, equal or lower. If -1, the first value is higher, if +1, the second value is higher.
 
 The Spaceship Operator is the equivalent of the basic comparisson used in the usort example.
 To easily sort associative arrays based on its values, we can use 'asort()' and 'arsort()' functions to sort by ascending and descending.
@@ -54,4 +54,4 @@ The function 'compact()' will do the opposite of extract, and will create a new 
 
 array_filter, array_map, array_reduce wasn't covered in the course, but they are very common to use.
 
-
+Article covering this topic: https://www.alura.com.br/artigos/trabalhando-com-arrays-em-php
