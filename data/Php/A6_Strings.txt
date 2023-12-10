@@ -1,0 +1,33 @@
+// Starting Project
+To start, run Php's test server with 'php -S localhost:8000', then go to 'http://localhost:8000/form_cadastrar.php' on the browser.
+In 'form_cadastrar.php' there's a HTML code. Inside the 'form' tag, there is the method parameter. Selecting POST will send the values written in this form to the $_POST variable that can be used to get these values and print them in '/cadastro.php' page.
+It is advised to refactor the strings functionalities in another Model class.
+
+Php String Function: 'explode()' - Will split a string in an array of strings. The split is defined by the string $separator. Also, the limit parameter can define the maximum number of arrays that will be created, and the last array will get all the remaining string.
+
+// String Functions in Autoloads
+
+Php String Function: 'strpos()' - Find the position of the first occurrence of a substring in a string, and returns the number of its position, or false on failure.
+Php String Function: 'substr()' - Returns part of a string or false on failure. The start and end of the string is determined by $offset and $length parameters.
+Php String Function: 'strlen()' - Returns the total length of a string. Its usually used to get how many chars it has, but special chars (like ãôé) will be counted as more than one char due to its byte size.
+
+Php String Function: 'strcmp()' - Returns zero if the two strings are equal. Returns positive or negative if one is higher than the other. The lenght parameter will determine the number of characters to use in the comparison, starting from zero.
+Php String Function: 'str_replace()' - Replace all occurrences of the search string with the replacement string.
+
+// Validations and Spaces
+
+Php Function: 'filter_var()' - Not exclusive to strings. Will filter a variable with a specified filter.
+Php String Function: 'implode()' - Opposite of explode, it glues two strings together. The strings are defined inside an array. The $separator parameter is an additional string in the middle of the glued strings.
+Php String Function: 'trim()' - Removes spaces (and \n,\t...) from the beginning and end of a string.
+
+// Regular Expressions (Regex)
+
+Regular Expressions are a sequence of chars that we want in a string.
+The function 'preg_match()' is used to perform a regular expression in php. Use /^ to start and $/ to finish. Use curly brackets to inform a range of values [a-z] and curly braces to inform how many can it have {4}.
+
+// Improvements
+
+The function 'preg_replace()' is used to perform a regular expression search and replace. Inform the regex pattern of the string that will be replaced on the first parameter, then the new string, and then the full string. Use \w+ to search for every char combination and \b to stop seaching when finding a space. The limit parameter will inform how many replaces will be done, if possible.
+
+Unused - 'htmlspecialchars': Used on HTML codes, offers basic protections against script injections.
+
