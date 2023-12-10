@@ -11,9 +11,9 @@ $data = json_decode($jsonData, true);
 $manager = new ExerciseManager($data);
 
 //Objectives:
-//1- List the number of participating countries
-//2- Make their names capitalized (alter the original array)
-//3- Order by: (A) country with the most gold medals, (B) In case of a tie, for the country with the most silver medals or (C) bronze medals
+//1 - List the number of participating countries
+//2 - Make their names capitalized (alter the original array)
+//3 - Order by: (A) country with the most gold medals, (B) In case of a tie, for the country with the most silver medals or (C) bronze medals
 //4 - List the number of medals distributed in the competition
 //5 - Countries that has no blank space in its name
 
