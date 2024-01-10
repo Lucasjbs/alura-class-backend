@@ -1,0 +1,62 @@
+// Reading Files
+Php File Function: 'fopen()' - Open a file or URL. First parameter is the file path, and second parameter is mode (read, write...).
+Php File Function: 'fgets()' - Get a string line from a file. It stops reading when he finds a line break, and the pointer will be repositioned to the next line. So if put in a loop, all lines can be read.
+Php File Function: 'feof()' - Identify if a pointer is at the end of a file.
+Php File Function: 'fclose()' - Closes an open file. In many cases, php will close the file automatically, but its important to close it regardless to avoid errors and save RAM memory.
+
+Php File Function: 'fread()' - Reads the file contents. The length number of bytes that will be read needs to be defined. The problem with FREAD is that if the file has 2GB, for example, then 2GB will be allocated to the RAM memory.
+Php File Function: 'filesize()' - Gets the size of the file in bytes.
+
+Php File Function: 'file_get_contents()' - Automatically opens a file, gets all of its byte size, reads all of its contents, returns a string and then closes the file. Has the same problem of RAM allocation that freads has for large files.
+Php File Function: 'file()' - Does everything that file get contents do, but returns an array.
+
+// Writing Files
+To write a new file, you'll need to open it with fopen on write mode ('w').
+Php File Function: 'fwrite()' - Write a new file with the contents provided. The contents to be written can be limited by length parameter.
+
+FOPEN modes: 'r'/'w' => Read and Write a file. The write mode will create a new one if the file doesn't exists. The write mode will start the pointer in the beginning of the file, and will overwrite its contents as if the keyboard key 'insert' is active. 
+To start the pointer at the end of the file and add more content, use the append mode 'a'.
+
+Php File Function: 'file_put_contents()' - Automatically opens/creates a file, puts the contents inside it and then closes the file. Parameter $flags can be used to append, with the FILE_APPEND constant. 
+
+// Wrappers and Filters
+Functions such as 'file_get_contents()' can be used for files as well as for streams. All Wrappers supported by php can be found on https://www.php.net/manual/pt_BR/wrappers.php
+When using functions like 'file_get_contents()' to open files, php uses the wrapper 'file://' by default.
+
+Note 1: To open streams in php, 'openssl' must be enabled on php.ini
+Note 2: To open zip files in php, 'zip' must be enabled on php.ini
+
+Zip folders can be opened with zip wrapper
+
+Php File Function: 'stream_filter_append()' - Attach a filter to a stream. The filter can be either an existing filter (stream_get_filters), or be custom made.
+An advantage of using stream filters is to modify the content as it's been read, instead of reading first, and then modifying the whole file.
+
+The Class php_user_filter() is an old class used to create a custom stream filter. The methods onCreate, onClose and filter are abstract methods of this class.
+The incoming data of a custom filter contains buckets, which are like small pieces of a file and don't have a predetermined size. To get the bucket object from the incoming file ($in), we can use 'stream_bucket_make_writeable'.
+Since the variable $out is a resource just like $in, the filtered string must be converted back to a resource. For that, a temporary file was created to store the filtered data.
+
+Note that 'php://' can execute special resources. For example, 'php://temp' will create a new temporary file, 'php://stdin' will get the keyboard input.
+
+// Keyboard Reading
+Php File Function: 'fgets()' - Gets one line from the resource, then puts the pointer on the next line.
+With STDIN and STDOUT, we can read or write data from the terminal.
+
+// Context
+The link https://httpbin.org will return the request that was sent to it. 
+Php File Function: 'stream_context_create()' - Create a stream context that can be added to requests such as 'file_get_contents()'
+Every protocol has its own specific set of contexts.
+
+// File Objects
+Php File Function: 'fputcsv()' - Format line as CSV and write one line to file. Sets the pointer to the next line at the end.
+Class Directory - Instanced with the function 'dir()' instead of new. On first parameter, define the directory to be open. The function 'read()' will return an entry from directory, then move the pointer to the next entry.
+
+Instead of using fopen, we can use SplFileObject to manage a file as an object. SplFileObject is defined as READ by default, unless another $mode is specified.
+SplFileObject offers many features, such as reading the last change date with 'getCTime()', since it implements SplFileInfo.
+
+// Encoding
+
+A summary about char tables: ASCII (US Standard), UTF-8 (Spanish/Portuguese), and Unicode (All chars).
+Unicode is not used directly, it just encompasses other char tables.
+
+Char manipulation with utf8_encode and utf8_decode
+The lib mbstring works with chars besides ASCII.
