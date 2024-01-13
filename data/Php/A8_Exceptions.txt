@@ -1,0 +1,35 @@
+// Execution Stack
+Just like .C language, PHP's executions follows a Stack Data Structure, where the last element added is the first one to be removed, similar to a stack of plates. As example, when the file "index.php" is executed, the following stack is created in memory:
+Stack: Main (Index.php) ==> Method 1 (stackExecutioner) ==> Method 2 (StackOne) ==> Method 3 (StackTwo). After Method 3 (StackTwo) finish its execution, it will be throw away from memory, then Method 2 and so on, in that order.
+All programming languages have a Stack Trace that can be accessed to help understand the code execution path. Usually, the compiler shows the Stack Trace when a Exception is caught. 
+
+// Exception Treatment
+Runtime Exception: typically thrown when a script encounters an unexpected condition that prevents it from continuing normal execution.
+Division By Zero Error: Don't mistake errors for exceptions. Divisions by zero returns errors, not exceptions.
+To prevent an error or exception from breaking the whole execution, we can use Try/Catch blocks on problematic parts of the code.
+Once an error or exception is found, the rest of the code will not be executed until a Try/Catch block catches the problem. 
+Multiple Exceptions Problem: A unique Try can have multiple Catches. In PHP you can also use Multicatches.
+Catch Error Variable ($e): returns an object of the specified error. This object have methods such as getMessage() that can be usefull to identify the error.
+
+// Launching Exceptions
+When an error or exception occurs, PHP will throw it automatically. We can do it manually as wlee, with the "throw" command.
+You can throw exceptions one after the other, and get the previous one with $e->getPrevious() if you wish.
+Some IDEs can work with annotations to identify that a specified method or function can throw an exception or error. This can be useful for a development environment.
+
+// Understanding Exceptions
+There's an interface inside PHP, that can only be used as an inteface by PHP, called Throwable. Two Classes implements this interface: Class Error and Class Exception.
+Its only possible to create a custom Exception Class. Errors and Throwable are exclusive for internal PHP use.
+Catching Generic Exception Types: To have a better understanding of what you're up to, its recomended to use more specific Error/Exception methods such as BadFunctionCallException. Usage of generic catches such as Throwable must be used sparingly for this reason.
+Creating Custom Exception: to create a custom exception, simply create a class that extends a Exception Class. You can add new methods and variables to it just like a normal class (although it's uncommon).
+
+// Applying Knowledge (1:04:30)
+Creating a new custom exception called InsufficientFundsException. Usually, exception classes have an "_Exception" at the end 
+Customizing Exceptions: Creating custom methods and rewriting the message inside the Exception.
+There's no need to use custom exceptions all the time, the exceptions provided by SPL already cover a variety of situations. 
+
+// Finally and PHP Peculiarities
+Finally: Always execute at the end of the Try/Catch block, regardless if an exception is throw or not. Finally will execute even after the Try/Catch returns a value.
+Usage of finally is uncommon in practical codes.
+
+Old PHP Error Treatments: Error, Warning and Notices.
+Be careful with annotations with error suppressors.
