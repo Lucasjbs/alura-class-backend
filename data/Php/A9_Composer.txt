@@ -1,0 +1,27 @@
+// Intro
+
+How to Install
+What is composer? Dependecy Manager
+Initializing Composer
+
+
+// Managing Dependencies
+Searching Packages on Packgist
+Installing Guzzle 
+How packges works (They use standard php, but its specialist on that)
+
+//Understanding Autoload
+Mapping namespace to SRC
+PSRs
+
+// Code Quality Tools
+PHPUnit
+CodeSniffer...
+
+
+//Automatic processes with Scripts
+Creating scripts as a shortcurt (Ex: composer test == vendor/bin/phpunit --filter Unit)
+Events (Triggers)
+
+// Publishing
+
