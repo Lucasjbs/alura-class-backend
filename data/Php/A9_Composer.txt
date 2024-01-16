@@ -1,27 +1,57 @@
-// Intro
+// Installing Composer
+Composer is a dependency manager for PHP that simplifies the process of managing libraries and packages in a PHP project.
+Download PHP Composer at https://getcomposer.org/download/
+Check if composer was installed with "composer --version"
 
-How to Install
-What is composer? Dependecy Manager
-Initializing Composer
-
+To initialize composer, run 'composer init'. This command will create a "composer.json" file with the data you provided. You can edit or create a new one from scratch without this command as well.
+The Package name is usually structured as: "yourNameOrAlias/projectName"
 
 // Managing Dependencies
-Searching Packages on Packgist
-Installing Guzzle 
-How packges works (They use standard php, but its specialist on that)
+Packagist: "https://packagist.org/" is the default package repository for Composer. It hosts most of PHP's libraries and packages that you can use in your projects. When you specify dependencies in your composer.json file, Composer often resolves and downloads them from Packagist.
+We will be using Guzzle (https://packagist.org/packages/guzzlehttp/guzzle) to show how to manage dependencies.
+We can use dependencies from other places as well, packagist is just the default source.
 
-//Understanding Autoload
-Mapping namespace to SRC
-PSRs
+To install the package, run "composer require <package name>" (ex: composer require guzzlehttp/guzzle)
+This command will install the dependency AND every other dependency it needs to work properly.
+To install every dependency on composer.json, use "composer install". If composer.lock exists, then use "composer update".
 
-// Code Quality Tools
-PHPUnit
-CodeSniffer...
+The idea of using packages is to build relatively complex applications without thousands of lines of code. We can trust each dependency to do a specific job very well. 
 
+Note: Had to install symfony/css-selector and enable a .pem certificate throught php.ini to make this work (https://stackoverflow.com/questions/21114371/php-curl-error-code-60)
 
-//Automatic processes with Scripts
-Creating scripts as a shortcurt (Ex: composer test == vendor/bin/phpunit --filter Unit)
-Events (Triggers)
+// Understanding Autoload
+The Vendor folder already contains an Autoload file that will set up the dependency classes automatically.
+To map your project's classes so that the Vendor Autoload can locate them, you must configure the path with namespace in composer.json.
+When configuring autoload, you will have to select the type of PSR to use. The most used PSR currently is psr-4. 
+"composer dumpautoload": If you have made changes to composer.json manually and already have codes in you source, run this command to update the autoload. 
+
+To locate non-standardized Classes and files, you can add **"classmap": ["path1", "path2"],** and **"files": ["path1", "path2"],** to the "autoload" section of composer.json.
+
+// Quality Control Tools
+PHPUnit is a framework for PHP, designed to support unit tests in the developer environment.
+Since PHPUnit is a dependency for the developer environment only, we should let composer know that this dependency isn't supposed to be exported to production. All we need to do is use --dev parameter for this: "composer require --dev phpunit/phpunit"
+
+"vendor/bin/phpunit --version": To check PHPunit after installation
+"vendor/bin/phpunit .\tests\BestPratices\Composer\CourseSeekerUTest.php": To run tests from this class.
+
+Other Dev Dependencies: PHP CodeSniffer, Phan...
+
+// Automating processes with scripts
+A shorter way to run the tests is by adding scripts in composer.json
+Example: "scripts": {"test": "vendor/bin/phpunit .\\tests\\BestPratices\\Composer\\CourseSeekerUTest.php"}
+With this, you can run the test with the command "composer test".
+
+These Scripts can be used to run any command on the terminal, its not exclusive for dependencies.
+Scripts can also be used to run events, such as "post-update-cmd" which will run the script after a "composer update".
 
 // Publishing
+The version of your library/project can be defined by the Tags on Git. After pushing the project on something like GitHub or GitLab, log in on Packagist and submit the project to the site.
+
+Pay attention to the Bin file. You might need to write "#!/usr/bin/env php" to create one on vendor when its imported. 
+
+
+
+
+
+
 
