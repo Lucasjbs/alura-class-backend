@@ -1,0 +1,48 @@
+// Clearing Terrain
+
+
+
+
+
+Single Responsibility Principle (SRP):
+Open/Closed Principle (OCP):
+Liskov Substitution Principle (LSP):
+Interface Segregation Principle (ISP):
+Dependency Inversion Principle (DIP):
+
+Download the video project
+Class Cohesion ==> Single Responsibility Principle
+Encapsulation ==> private function thisMethodDoesThisVeryWell();
+Coupling ==> How much on Class depends on others
+
+
+
+// Improving Cohesion
+
+
+
+
+Code Refactoring
+Single Responsibility Principle
+
+
+
+// Working with Coupling
+
+
+
+
+Code Refactoring: Extends
+Open/Closed Principle (OCP): Don't expose your Class unecessarly
+
+
+// Breach of trust
+24:30
+
+
+
+// Improved Encapsulation
+
+
+
+
