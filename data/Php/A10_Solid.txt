@@ -1,48 +1,33 @@
 // Clearing Terrain
+List of SOLID principles:
+- Single Responsibility Principle (SRP);
+- Open/Closed Principle (OCP);
+- Liskov Substitution Principle (LSP);
+- Interface Segregation Principle (ISP);
+- Dependency Inversion Principle (DIP);
 
+Cohesion Concept: A cohesive class will only do what its supossed to do. For example, its not expected for the Class "Person" to have a method "printDocument()", since a person is not supossed to do that.
+Encapsulation Concept: You don't need to know how that Class works, just what the method will do. For example, I don't know how the Class "BadResponseException" works exactly, but I know for sure that its method "getMessage()" will return the error message, without know how. The behavior is encapsulated in the method and class.
 
-
-
-
-Single Responsibility Principle (SRP):
-Open/Closed Principle (OCP):
-Liskov Substitution Principle (LSP):
-Interface Segregation Principle (ISP):
-Dependency Inversion Principle (DIP):
-
-Download the video project
-Class Cohesion ==> Single Responsibility Principle
-Encapsulation ==> private function thisMethodDoesThisVeryWell();
-Coupling ==> How much on Class depends on others
-
-
+Coupling Concept: How much one implementation depends on others. For example, the Class Watcher is coupled to the Class Course, changes that are made to Course can affect Watcher. As the project gets more Couplings, it will need more Abstractions to stabilize it (Couplings X Abstractions Graph).
 
 // Improving Cohesion
-
-
-
-
-Code Refactoring
-Single Responsibility Principle
-
-
+Single Responsibility Principle: Every Class should do only one thing, and specialize in it. In other words, the class must be cohesive.
 
 // Working with Coupling
+Code Refactoring: Instead of having the score implementations centrilized in ScoreCalculator, an Interface for Scorable Classes was created, and each Class have its own rules for it, but will always return the value expected by ScoreCalculator.
 
-
-
-
-Code Refactoring: Extends
-Open/Closed Principle (OCP): Don't expose your Class unecessarly
-
+Open/Closed Principle (OCP): Keep classes/functions/etc open for extension but closed for modification. For our example, new Scorable classes can be created, but ScoreCalculator don't need to be modified for it. This helps to minimize the risk of introducing bugs in existing code.
 
 // Breach of trust
-24:30
+Code Refactoring: The method "getUrl()" in AluraPlus is expected to return the whole URL, not just a string piece of it. Thats why "http://videos..." needs to be concatenated into it.
 
-
+Liskov Substitution Principle (LSP): Objects of a superclass should be able to be replaced with objects of a subclass without affecting the correctness of the program. For our example, it is expected that the superclass returns the whole URL, so the subclass must return the whole URL as well.
 
 // Improved Encapsulation
+Code Refactoring: The methods "watch()" can be assigned to an interface to be called on the Watcher Service.
 
+Dependency Inversion Principle (DIP): Use abstractions, use a switch to turn on the lights not the wires. For our example, we used the abstraction Watchable to watch the courses, instead of using their Classes directly.
 
-
+Interface Segregation Principle (ISP): Don't force a Class to implement something that doesn't make sense for the context. For our example, Watchable should be its own Interface, and the method "watch()" shouldn't be forced inside Scorable just for convenience.
 
